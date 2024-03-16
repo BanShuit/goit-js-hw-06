@@ -4,10 +4,10 @@ let categoriesCount = 0;
 categoriesList.forEach(category => {
     categoriesCount++;
     const categoryName = category.querySelector('h2').textContent;
-    const elementsCount = category.querySelector('li').clientHeight;
+    const elementsCount = category.querySelectorAll('li').length;
 
-    console.log('Categorty: ${categoryName}');
-    console.log('Elements: ${elementsCount}');
+    console.log(`Category: ${categoryName}`);
+    console.log(`Elements: ${elementsCount}`);
 })
 
-console.log('Number of categories: ${categoriesCount}');
+console.log(`Number of categories: ${categoriesCount}`);
