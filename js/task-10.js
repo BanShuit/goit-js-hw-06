@@ -13,18 +13,18 @@ destroyButton.addEventListener('click', destroyBoxes);
 
 function createBoxes() {
     const amount = input.value;
-
     const boxes = [];
     for (let i = 0; i < amount; i++) {
-        const box = document.createElement('div');
-        box.style.width = `${30 + i * 10}px`;
-        box.style.height = `${30 + i * 10}px`;
+        const box = document.createElement("div");
+        const size = boxesContainer.children.length * 10 + 30 + "px";
+        box.style.width = size;
+        box.style.height = size;
         box.style.backgroundColor = getRandomHexColor();
-        boxes.push(box);
+        boxesContainer.append(box);
     }
-    boxesContainer.append(...boxes);
 }
 
 function destroyBoxes() {
     boxesContainer.innerHTML = '';
 }
+
